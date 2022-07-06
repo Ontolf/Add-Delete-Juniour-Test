@@ -1,0 +1,31 @@
+"use strict";
+const switcherContainer = document.getElementById('productType');
+const switcherInputValue = document.getElementById('productType');
+const TypeContainers = {
+    dvdType: document.getElementById('switcher-input-container-type-dvd'),
+    bookType: document.getElementById('switcher-input-container-type-book'),
+    furnitureType: document.getElementById('switcher-input-container-type-furniture'),
+};
+TypeContainers.dvdType.style.display = "none";
+TypeContainers.bookType.style.display = "none";
+TypeContainers.furnitureType.style.display = "none";
+switcherContainer.addEventListener("change", function () {
+    if (switcherInputValue.value === "dvd") {
+        TypeContainers.dvdType.style.display = "";
+        TypeContainers.bookType.style.display = "none";
+        TypeContainers.furnitureType.style.display = "none";
+    }
+    if (switcherInputValue.value === "book") {
+        TypeContainers.dvdType.style.display = "none";
+        TypeContainers.bookType.style.display = "";
+        TypeContainers.furnitureType.style.display = "none";
+    }
+    if (switcherInputValue.value === "furniture") {
+        TypeContainers.dvdType.style.display = "none";
+        TypeContainers.bookType.style.display = "none";
+        TypeContainers.furnitureType.style.display = "";
+    }
+});
+// Trigger the change event to load the initial input field DVD
+switcherContainer.dispatchEvent(new Event('change'));
+//# sourceMappingURL=type-switcher.js.map
